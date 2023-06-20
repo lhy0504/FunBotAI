@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "gptchatapp",
-    "slug": "gptchatapp",
-    "version": "1.0.0",
+    "name": "FunBot AI",
+    "slug": "FunBot",
+    "version": "1.0.6",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -10,23 +10,51 @@
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#9900ef"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.lhy.funbot",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "FunBot accesses generated images in your gallery",
+        "NSPhotoLibraryAddUsageDescription": "FunBot saves generated images in your gallery"
+      },
+      "buildNumber": "8"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#9900ef"
+      },
+      "permissions": [
+        "CAMERA_ROLL",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "package": "com.lhy.funbot",
+      "versionCode": 6
     },
     "web": {
       "bundler": "metro",
       "favicon": "./assets/images/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d7f40c42-c272-4bc7-a783-af95b9cd64b1"
+      }
+    },
+    "plugins": [
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow FunBot to access your generated photos.",
+          "savePhotosPermission": "Allow FunBot to save your generated photos.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ]
+    ]
   }
 }
